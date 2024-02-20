@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Newtonsoft.Json;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -9,12 +10,14 @@ using static System.Net.WebRequestMethods;
 
 namespace APIREQUEST
 {
-	public class SWAPIREQUEST
+	internal class SWAPIREQUEST
 	{
-		const string SWAPI = @"https://swapi.dev/api/people/";
+		[JsonProperty]
+		internal string SWAPI = "https://swapi.dev/api/people/";
+		
 		public override string ToString()
 		{
-			return SWAPI;
+			return this.SWAPI;
 		}
 	}
 }
